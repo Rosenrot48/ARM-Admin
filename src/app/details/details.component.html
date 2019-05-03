@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div *ngFor="let object of (objects | selectedObject: id)">
+  <h2>{{object.name}} Details</h2>
+
+  <div><span>id: </span>{{object.id}}</div>
+  <div>
+    <label>name:
+      {{object.name}}
+    </label>
+  </div>
+  <div>
+    <span>Date of create: </span> {{object.creat_data}}
+  </div>
+</div>
+
+<div>
+  <button mat-raised-button color="accent" routerLink="/edit">Редактировать</button>
+  <button mat-raised-button color="warn"> Удалить </button>
+  <button mat-raised-button color="primary" (click)="back()"> Назад </button>
+
+</div>
+

@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let object of objects"
+      (click)="onSelect(object)" [routerLink]="['/object-details', object.id]">
+    <span class="badge">{{object.id}}</span>{{object.name}}
+  </li>
+</ul>
+<div>
+  <button mat-raised-button color="primary"> Add </button>
+  <button mat-raised-button color="accent" (click)="back()"> Back </button>
+</div>
