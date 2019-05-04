@@ -11,17 +11,87 @@ export class InMemoryDataService implements InMemoryDbService {
 
     createDb() {
      const  objectsList: Stub_object[] = [
-      { id: 11, name: 'Mr. Nice', creat_data: '12-02-2010' },
-      { id: 12, name: 'Narco', creat_data: '22-01-2000' },
-      { id: 13, name: 'Bombasto', creat_data: '18-01-2007' },
-      { id: 14, name: 'Celeritas', creat_data: '13-02-2007' },
-      { id: 15, name: 'Magneta', creat_data: '02-01-2017' },
-      { id: 16, name: 'RubberMan', creat_data: '15-05-2019' },
-      { id: 17, name: 'Dynama', creat_data: '' },
-      { id: 18, name: 'Dr IQ', creat_data: '' },
-      { id: 19, name: 'Magma', creat_data: '' },
-      { id: 20, name: 'Tornado', creat_data: '' },
-    ];
+         { id : 1,
+           createTime: '2018-12-31T21:00:00.000+0000',
+           changeTime: null,
+           code: 'user',
+           name: 'GENERAL_USERS',
+           parentClassCode: '',
+           tableName: 'users'
+         },
+         {
+           id: 2,
+           createTime: '2018-12-31T21:00:00.000+0000',
+           changeTime: null,
+           code: 'status',
+           name: 'GENERAL_STATUS',
+           parentClassCode: '',
+           tableName: 'status'
+         },
+         {
+           id: 3,
+           createTime: '2018-12-31T21:00:00.000+0000',
+           changeTime: null,
+           code: 'group',
+           name: 'GENERAL_GROUPS',
+           parentClassCode: '',
+           tableName: 'groups'
+         },
+         {
+           id: 4,
+           createTime: '2018-12-31T21:00:00.000+0000',
+           changeTime: null,
+           code: 'otp',
+           name: 'GENERAL_OTP',
+           parentClassCode: '',
+           tableName: 'otp'
+         },
+         {
+           id: 5,
+           createTime: '2018-12-31T21:00:00.000+0000',
+           changeTime: null,
+           code: 'xattr',
+           name: 'EXTENDED_ATTRIBUTES',
+           parentClassCode: '',
+           tableName: 'xattr'
+         },
+         {
+           id: 6,
+           createTime: '2018-12-31T21:00:00.000+0000',
+           changeTime: null,
+           code: 'session',
+           name: 'GENERAL_SESSIONS',
+           parentClassCode: '',
+           tableName: 'sessions'
+         },
+         {
+           id: 7,
+           createTime: '2019-04-25T13:11:03.644+0000',
+           changeTime: '2019-04-25T13:11:03.644+0000',
+           code: 'bankUsers',
+           name: 'BANK_USERS',
+           parentClassCode: 'user',
+           tableName: 'users'
+         },
+         {
+           id: 8,
+           createTime: '2019-04-25T13:11:06.708+0000',
+           changeTime: '2019-04-25T13:11:06.708+0000',
+           code: 'partnerUsers',
+           name: 'PARTNER_USERS',
+           parentClassCode: 'user',
+           tableName: 'users'
+         },
+         {
+           id: 9,
+           createTime: '2018-12-31T21:00:00.000+0000',
+           changeTime: null,
+           code: 'branch',
+           name: 'GENERAL_BRANCH',
+           parentClassCode: '',
+           tableName: 'branch'
+         }
+       ];
      return  { objectsList};
   }
     createDb2() {

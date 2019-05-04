@@ -6,24 +6,24 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
  * Food data with nested structure.
  * Each node has a name and an optiona list of children.
  */
-interface FoodNode {
+interface ObjectNode {
   name: string;
-  children?: FoodNode[];
+  children?: ObjectNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
+const TREE_DATA: ObjectNode[] = [
   {
-    name: 'Fruit',
+    name: 'Users',
     children: [
-      {name: 'Apple'},
-      {name: 'Banana'},
-      {name: 'Fruit loops'},
+      {name: 'Partner'},
+      {name: 'Bank'},
+      {name: 'General'},
     ]
   }, {
-    name: 'Vegetables',
-    children: [
+    name: 'Status',
+    /*children: [
       {
-        name: 'Green',
+        name: '',
         children: [
           {name: 'Broccoli'},
           {name: 'Brussel sprouts'},
@@ -40,8 +40,13 @@ const TREE_DATA: FoodNode[] = [
           {name: 'Carrots'},
         ]
       },
-    ]
+    ]*/
   },
+  {name: 'Groups'},
+  {name: 'OTP'},
+  {name: 'Xattr'},
+  {name: 'Sessions'},
+  {name: 'Branch'},
 ];
 
 /** Flat node with expandable and level information */
@@ -60,7 +65,7 @@ interface ExampleFlatNode {
   styleUrls: ['tree.component.css'],
 })
 export class TreeComponent {
-  private transformer = (node: FoodNode, level: number) => {
+  private transformer = (node: ObjectNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,

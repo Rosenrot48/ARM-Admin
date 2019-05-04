@@ -39,6 +39,7 @@ export class ListComponent implements OnInit {
     this.listService.addObject(object)
       .subscribe( object => this.objects.push(object));
   }
+
 }
 
 

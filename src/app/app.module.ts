@@ -16,6 +16,7 @@ import {SelectedObjectPipe} from './pipes/selected-object.pipe';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import {MatInputModule} from '@angular/material/input';
 
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -43,6 +44,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     MatIconModule,
     MatTreeModule,
     MatTableModule,
+    MatInputModule,
     FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false})

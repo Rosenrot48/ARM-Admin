@@ -3,7 +3,8 @@
   <h2>{{object.name | uppercase}} Details</h2>
   <div><span>id: </span>{{object.id}}</div>
   <div><span>name: </span> <input [(ngModel)]="object.name" placeholder="name"/></div>
-  <div><span> Date of create: </span> {{object.creat_data}}</div>
+  <div><span> Date of create: </span> {{object.createTime}}</div>
+  <div><span>Code: </span> {{object.code}}</div>
   <div>
     <!--<button mat-raised-button color="accent" routerLink="/edit/:${id}">Редактировать</button>-->
     <button mat-raised-button color="accent" (click)="save()">Edit</button>

@@ -1,0 +1,27 @@
+button{
+  margin-top: 15px;
+  margin-left: 5px;
+}
+div{
+  margin-top: 15px;
+  margin-left: 15px;
+
+}
+ p {
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 120%;
+  font-weight: lighter;
+}
+h2 {
+  font-weight: bolder;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 70%;
+}

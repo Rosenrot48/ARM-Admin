@@ -1,10 +1,15 @@
 table {
   width: 100%;
 }
-thead {
-  text-align: center;
+th,td{
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid black;
 }
-tbody {
-
-  text-align: center;
+tr:hover {background-color: #f5f5f5;}
+button{
+  margin-top: 15px;
+  margin-left: 15px;
 }
+.b1:hover {background-color: #bad1ff;}
+.b2:hover {background-color: brown}

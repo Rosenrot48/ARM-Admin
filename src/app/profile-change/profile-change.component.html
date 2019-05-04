@@ -1,14 +1,27 @@
 <app-navbar></app-navbar>
 <div class="container">
   <h2> Profile Details</h2>
-  <p><span> Surname: </span> <input [(ngModel)]="profile.surname" placeholder="surname"> </p>
-  <p> <span>Name: </span> {{profile.name}}</p>
-  <p> <span> Patrononymic: </span>  {{profile.patronymic}}</p>
-  <p><span> Position: </span> {{profile.position}}</p>
-  <p><span> Subdivision: </span> {{profile.subdivision}} </p>
-</div>
+  <div>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Surname" value="{{profile.surname}}">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Name" value="{{profile.name}}">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Patronymic" value="{{profile.patronymic}}">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Position" value="{{profile.position}}" >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Subdivision" value="{{profile.subdivision}}">
+      </mat-form-field>
+    </form>
+  </div>
 <div>
-  <button mat-raised-button> Save </button>
-  <button mat-raised-button routerLink="/profile" > Cancel </button>
+  <button mat-raised-button color="primary"> Save </button>
+  <button mat-raised-button routerLink="/profile"  color="warn"> Cancel </button>
 </div>
-
+</div>
