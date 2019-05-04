@@ -4,7 +4,6 @@ import {ListService} from '../list.service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
 import {InMemoryDataService} from '../in-memory-data.service';
-import {objectsList} from '../mock-objects';
 
 
 @Component({
@@ -16,8 +15,6 @@ import {objectsList} from '../mock-objects';
 export class ListComponent implements OnInit {
   objects: Stub_object[];
   selectedObject: Stub_object;
-  displayedColumns = ['id', 'name', 'creat_data'];
-  dataSource = objectsList;
   constructor(private listService: ListService, private location: Location) { }
 
 

@@ -1,5 +1,5 @@
 import {Stub_object} from './stub_object';
-
+/*
 export const objectsList: Stub_object[] = [
   { id: 11, name: 'Mr. Nice', creat_data: '12-02-2010' },
   { id: 12, name: 'Narco', creat_data: '22-01-2000' },
@@ -12,3 +12,4 @@ export const objectsList: Stub_object[] = [
   { id: 19, name: 'Magma', creat_data: '' },
   { id: 20, name: 'Tornado', creat_data: '' },
 ];
+*/

@@ -1,14 +1,16 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <h2> Profile Details</h2>
-  <p><span> Surname: </span> {{profile.surname}} </p>
-  <p> <span>Name: </span> {{profile.name}}</p>
-  <p> <span> Patrononymic: </span>  {{profile.patronymic}}</p>
-  <p><span> Position: </span> {{profile.position}}</p>
-  <p><span> Subdivision: </span> {{profile.subdivision}} </p>
+  <h2> {{ 'Profile Details' | translate}} </h2>
+  <p><span> {{'Surname' | translate}}: </span> {{profile.surname}} </p>
+  <p> <span>{{'Name' | translate}}: </span> {{profile.name}}</p>
+  <p> <span> {{'Patronymic' | translate}} : </span>  {{profile.patronymic}}</p>
+  <p><span> {{'Position' | translate}}: </span> {{profile.position}}</p>
+  <p><span> {{'Subdivision' | translate}}: </span> {{profile.subdivision}} </p>
 </div>
 <div>
   <button mat-raised-button color="warn"> Delete </button>
   <button mat-raised-button routerLink="/profileChange" color="primary"> Change </button>
 </div>
 
+<button (click)="switchLanguage('en')">en</button>
+<button (click)="switchLanguage('ru')">ru</button>

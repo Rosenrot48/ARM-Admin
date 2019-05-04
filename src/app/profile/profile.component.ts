@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Stub_profile} from '../Stub_profile';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -18,9 +19,13 @@ profile: Stub_profile = {
   password: '********'
 }
 
-  constructor() { }
-
+  constructor( private translate: TranslateService) {
+    translate.setDefaultLang('ru');
+  }
   ngOnInit() {
   }
 
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 }

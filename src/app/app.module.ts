@@ -14,14 +14,21 @@ import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import {SelectedObjectPipe} from './pipes/selected-object.pipe';
 import {FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import {MatInputModule} from '@angular/material/input';
 
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { FilterByPipe } from './pipes/filter-by.pipe';
 
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -33,7 +40,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     ListComponent,
     DetailsComponent,
     EditComponent,
-    SelectedObjectPipe
+    SelectedObjectPipe,
+    FilterByPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,14 @@ import { InMemoryDataService } from './in-memory-data.service';
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false})
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
