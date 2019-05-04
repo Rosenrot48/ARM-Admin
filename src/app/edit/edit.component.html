@@ -1,6 +1,6 @@
 <div><app-navbar></app-navbar></div>
 
-<div *ngFor="let object of (objects | selectedObject: id)">
+<div *ngIf ="object">
   <h2>{{object.name}} Details</h2>
 
   <div><span>id: </span>{{object.id}}</div>

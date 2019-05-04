@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 import {Stub_object} from './stub_object';
+import {Stub_profile} from './Stub_profile';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryDataService implements InMemoryDbService{
+export class InMemoryDataService implements InMemoryDbService {
 
-  createBd() {
-     const objectsList: Stub_object[] = [
+    createDb() {
+     const  objectsList: Stub_object[] = [
       { id: 11, name: 'Mr. Nice', creat_data: '12-02-2010' },
       { id: 12, name: 'Narco', creat_data: '22-01-2000' },
       { id: 13, name: 'Bombasto', creat_data: '18-01-2007' },
@@ -20,7 +22,17 @@ export class InMemoryDataService implements InMemoryDbService{
       { id: 19, name: 'Magma', creat_data: '' },
       { id: 20, name: 'Tornado', creat_data: '' },
     ];
-     return {objectsList};
+     return  { objectsList};
   }
-
+    createDb2() {
+      const profileList: Stub_profile[] = [
+        {  id: 1,
+          name: 'Ivan',
+          surname: 'Ivanov',
+          patronymic: 'Ivanovich',
+          position: 'admin',
+          subdivision: ' ',
+          password: '********'}
+      ];
+    }
 }

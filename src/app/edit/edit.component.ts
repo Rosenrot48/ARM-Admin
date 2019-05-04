@@ -10,29 +10,21 @@ import {Location} from '@angular/common';
   styleUrls: ['./edit.component.css'],
   providers: [ListService]
 })
-export class EditComponent implements OnInit, OnDestroy {
-  private id: number;
-  objects: Stub_object[];
-  private sub: any;
-
-  objectIdSnapshot: number;
+export class EditComponent implements OnInit {
+  @Input() object: Stub_object;
 
   constructor(private objectService: ListService, private route: ActivatedRoute, private location: Location) {
-    this.objects = objectService.getObjects();
   }
 
-  ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-
-      this.id = +params['id'];
-    });
+  ngOnInit() { this.getObject();
   }
 
-  ngOnDestroy() {
-
-    this.sub.unsubscribe();
-  }
   back() {
     this.location.back();
+  }
+  getObject(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.objectService.getObject(id)
+      .subscribe(object => this.object = object);
   }
 }

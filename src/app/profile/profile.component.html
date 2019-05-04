@@ -1,9 +1,11 @@
 <app-navbar></app-navbar>
 <div class="container">
   <h2> Profile Details</h2>
-  <p>Фамилия: <!--{{profile.surname}} </p>
-  <p>Имя: {{profile.name}}</p>
-  <p>Отчество: {{profile.second}}--></p>
+  <p><span> Surname: </span> {{profile.surname}} </p>
+  <p> <span>Name: </span> {{profile.name}}</p>
+  <p> <span> Patrononymic: </span>  {{profile.patronymic}}</p>
+  <p><span> Position: </span> {{profile.position}}</p>
+  <p><span> Subdivision: </span> {{profile.subdivision}} </p>
 </div>
 <div>
   <button mat-raised-button color="warn"> Delete </button>

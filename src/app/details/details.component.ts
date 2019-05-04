@@ -10,30 +10,31 @@ import { Location } from '@angular/common';
   styleUrls: ['./details.component.css'],
   providers: [ListService]
 })
-export class DetailsComponent implements OnInit, OnDestroy {
+export class DetailsComponent implements OnInit {
 
-  private id: number;
+  @Input() object: Stub_object;
   objects: Stub_object[];
-  private sub: any;
-
-  objectIdSnapshot: number;
 
   constructor(private objectService: ListService, private route: ActivatedRoute, private location: Location) {
-    this.objects = objectService.getObjects();
   }
 
-  ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
+  ngOnInit() {this.getObject(); }
 
-      this.id = +params['id'];
-    });
-  }
-
-  ngOnDestroy() {
-
-    this.sub.unsubscribe();
+  getObject(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.objectService.getObject(id)
+      .subscribe(object => this.object = object);
   }
   back() {
     this.location.back();
+  }
+
+  save(): void {
+  this.objectService.updateObject(this.object)
+    .subscribe(() => this.back());
+  }
+
+  delete(object: Stub_object): void {
+    this.objectService.deleteObject(object.id).subscribe(() => this.back());
   }
 }

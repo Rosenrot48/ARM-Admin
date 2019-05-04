@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'profileChange', component: ProfileChangeComponent},
   { path: 'list', component: ListComponent},
-  { path: 'object-details/:id', component: DetailsComponent},
-  { path: 'edit', component: EditComponent}
+  { path: 'detail/:id', component: DetailsComponent},
+  { path: 'edit/:id', component: EditComponent}
 ];
 
 @NgModule({
