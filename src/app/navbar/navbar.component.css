@@ -1,4 +1,4 @@
-.container{
+.table{
   display: block;
   right: 1rem;
   text-align: justify;
@@ -6,3 +6,6 @@
   padding: 10px;
 }
 
+img{
+  width: 80%;
+}

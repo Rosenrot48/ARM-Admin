@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatTableModule, MatToolbarModule, MatTreeModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatMenuModule, MatTableModule, MatToolbarModule, MatTreeModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileChangeComponent } from './profile-change/profile-change.component';
@@ -26,6 +26,8 @@ import { FilterByPipe } from './pipes/filter-by.pipe';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+import {BsDropdownModule} from 'ngx-bootstrap';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/');
 }
@@ -46,10 +48,12 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
     MatToolbarModule,
     MatButtonModule,
     AppRoutingModule,
     MatIconModule,
+    MatMenuModule,
     MatTreeModule,
     MatTableModule,
     MatInputModule,

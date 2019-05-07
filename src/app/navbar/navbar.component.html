@@ -1,9 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar class="container">
+<mat-toolbar class="table">
   <button  mat-icon-button routerLink="">Pastry</button>
   <button  mat-button routerLink="/profile"> Profile </button>
-
-  <button mat-button (click)="switchLanguage('en')">en</button>
-  <button mat-button (click)="switchLanguage('ru')">ru</button>
   <button mat-button routerLink=""  style="float:right"> Logout</button>
+
+  <button  mat-button style="float:right" [matMenuTriggerFor]="menu">
+    <mat-icon> <img src="/assets/img/language.png" class="">  </mat-icon> </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item  (click)="switchLanguage('en')">en</button>
+    <button mat-menu-item  (click)="switchLanguage('ru')">ru</button>
+  </mat-menu>
+
 </mat-toolbar>
