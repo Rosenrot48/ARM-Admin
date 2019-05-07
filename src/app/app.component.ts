@@ -8,11 +8,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'Pastry';
-
+  isReadonly: boolean;
   constructor( private translate: TranslateService) {
     translate.setDefaultLang('en');
   }
   switchLanguage(language: string) {
     this.translate.use(language);
   }
+
 }

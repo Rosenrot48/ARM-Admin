@@ -19,5 +19,6 @@
   "GROUPS": "Groups",
   "ADD": "Add",
   "CHANGE": "Change",
-  "DETAILS": "{{name}} Details"
+  "DETAILS": "{{name}} Details",
+  "SAVE": "Save changes"
 }

@@ -14,6 +14,8 @@ export class DetailsComponent implements OnInit {
 
   @Input() object: Stub_object;
   objects: Stub_object[];
+  isCollapsed: boolean = true;
+  isReadonly: boolean = true;
 
   constructor(private objectService: ListService, private route: ActivatedRoute, private location: Location) {
   }
@@ -29,12 +31,19 @@ export class DetailsComponent implements OnInit {
     this.location.back();
   }
 
-  save(): void {
+  save(save): void {
+    console.log(save);
   this.objectService.updateObject(this.object)
     .subscribe(() => this.back());
   }
 
   delete(object: Stub_object): void {
     this.objectService.deleteObject(object.id).subscribe(() => this.back());
+  }
+  toggleReadonly(pusher) {
+    console.log(pusher);
+    this.isReadonly = !this.isReadonly;
+    this.isCollapsed = !this.isCollapsed;
+
   }
 }
