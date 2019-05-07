@@ -27,7 +27,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/');
 }
 
 @NgModule({
@@ -55,7 +55,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false,  passThruUnknownUrl: true}),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

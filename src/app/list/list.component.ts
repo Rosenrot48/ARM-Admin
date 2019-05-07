@@ -4,6 +4,9 @@ import {ListService} from '../list.service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
 import {InMemoryDataService} from '../in-memory-data.service';
+import {Observable} from 'rxjs';
+import {DataSource} from '@angular/cdk/table';
+
 
 
 @Component({
@@ -15,6 +18,8 @@ import {InMemoryDataService} from '../in-memory-data.service';
 export class ListComponent implements OnInit {
   objects: Stub_object[];
   selectedObject: Stub_object;
+  displayedColumns = ['id', 'name', 'code'];
+  dataSource = new ObjectDataSource(this.listService);
   constructor(private listService: ListService, private location: Location) { }
 
 
@@ -22,6 +27,9 @@ export class ListComponent implements OnInit {
  ngOnInit() {
   this.getObjects();
  }
+
+
+
  getObjects(): void {
     this.listService.getObjects()
       .subscribe(objects => this.objects = objects);
@@ -37,6 +45,16 @@ export class ListComponent implements OnInit {
       .subscribe( object => this.objects.push(object));
   }
 
+}
+export class ObjectDataSource extends DataSource<any> {
+  constructor(private listService: ListService) {
+    super();
+  }
+  connect(): Observable<Stub_object[]> {
+    return this.listService.getObjects();
+  }
+  disconnect(): void {
+  }
 }
 
 

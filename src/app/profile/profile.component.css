@@ -16,3 +16,6 @@ p {
 h2 {
   font-weight: bolder;
 }
+
+.b2:hover {background-color: #8806a5}
+.b3:hover {background-color: darkred}

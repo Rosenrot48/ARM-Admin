@@ -1,9 +1,23 @@
 {
-  "Profile_Details": "Profile Details",
-  "Name": "Name",
-  "Surname": "Surname",
-  "Patronymic": "Patronymic",
-  "Position": "Position",
-  "Subdivision": "Subdivision"
-
+  "PROFILE_DETAILS": "Profile Details",
+  "NAME": "Name",
+  "SURNAME": "Surname",
+  "PATRONYMIC": "Patronymic",
+  "POSITION": "Position",
+  "SUBDIVISION": "Subdivision",
+  "ID": "ID",
+  "DATE_OF_CREATE": "Date of Create",
+  "CODE": "Code",
+  "EDIT": "Edit",
+  "DELETE": "Delete",
+  "BACK": "Back",
+  "USERS": "Users",
+  "PARTNER": "Partner",
+  "BANK": "Bank",
+  "GENERAL": "General",
+  "STATUS": "Status",
+  "GROUPS": "Groups",
+  "ADD": "Add",
+  "CHANGE": "Change",
+  "DETAILS": "{{name}} Details"
 }

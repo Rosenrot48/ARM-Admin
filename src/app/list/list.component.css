@@ -12,4 +12,10 @@ button{
   margin-left: 15px;
 }
 .b1:hover {background-color: #bad1ff;}
-.b2:hover {background-color: brown}
+.b2:hover {background-color: #8806a5}
+
+.example-container {
+  height: 550px;
+  overflow: auto;
+}
+

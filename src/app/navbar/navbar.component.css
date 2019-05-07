@@ -1,6 +1,8 @@
 .container{
+  display: block;
   right: 1rem;
   text-align: justify;
   font-size: 1rem;
   padding: 10px;
 }
+

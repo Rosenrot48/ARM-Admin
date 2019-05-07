@@ -1,27 +1,33 @@
 <app-navbar></app-navbar>
-<div style="overflow-x:auto;">
-<table class="heroes">
-  <thead>
-  <tr class="stripy">
-    <th> ID </th>
-    <th ng-click="orderByMe('name')"> Name </th>
-    <th ng-click="orderByMe('name')"> Date of Create </th>
-    <th ng-click="orderByMe('name')"> Code </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let object of objects"
-      (click)="onSelect(object)" routerLink="/detail/{{object.id}}" class="stripy">
-    <td>{{object.id}}</td>
-    <td>{{object.name}}</td>
-    <td>{{object.createTime}}</td>
-    <td>{{object.code}}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="example-container mat-elevation-z10">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> {{'ID' | translate}} </th>
+      <td mat-cell *matCellDef="let element" routerLink="/detail/{{element.id}}"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> {{'NAME' | translate}} </th>
+      <td mat-cell *matCellDef="let element" routerLink="/detail/{{element.id}}"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef> {{'CODE' | translate}}</th>
+      <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
 <div>
-  <button mat-raised-button color="primary" class="b2" (click)="add()"> Add </button>
-  <button mat-raised-button color="accent" class="b1" (click)="back()"> Back </button>
+  <button mat-raised-button color="primary" class="b2" (click)="add()"> {{'ADD' | translate}} </button>
+  <button mat-raised-button color="accent" class="b1" (click)="back()"> {{'BACK' | translate}} </button>
 </div>
+
+
 

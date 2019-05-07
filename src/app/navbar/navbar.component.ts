@@ -15,4 +15,5 @@ export class NavbarComponent implements OnInit {
   switchLanguage(language: string) {
     this.translate.use(language);
   }
+
 }

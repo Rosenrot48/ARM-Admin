@@ -2,8 +2,8 @@
 <mat-toolbar class="container">
   <button  mat-icon-button routerLink="">Pastry</button>
   <button  mat-button routerLink="/profile"> Profile </button>
-  <button mat-button routerLink=""> Logout</button>
-  <button mat-button routerLink="/list"> List of</button>
-  <button (click)="switchLanguage('en')">en</button>
-  <button (click)="switchLanguage('ru')">ru</button>
+
+  <button mat-button (click)="switchLanguage('en')">en</button>
+  <button mat-button (click)="switchLanguage('ru')">ru</button>
+  <button mat-button routerLink=""  style="float:right"> Logout</button>
 </mat-toolbar>

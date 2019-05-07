@@ -1,16 +1,14 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <h2> {{ 'Profile Details' | translate}} </h2>
-  <p><span> {{'Surname' | translate}}: </span> {{profile.surname}} </p>
-  <p> <span>{{'Name' | translate}}: </span> {{profile.name}}</p>
-  <p> <span> {{'Patronymic' | translate}} : </span>  {{profile.patronymic}}</p>
-  <p><span> {{'Position' | translate}}: </span> {{profile.position}}</p>
-  <p><span> {{'Subdivision' | translate}}: </span> {{profile.subdivision}} </p>
+  <h2> {{ 'PROFILE_DETAILS' | translate}} </h2>
+  <p><span> {{'SURNAME' | translate}}: </span> {{profile.surname}} </p>
+  <p> <span>{{'NAME' | translate}}: </span> {{profile.name}}</p>
+  <p> <span> {{'PATRONYMIC' | translate}} : </span>  {{profile.patronymic}}</p>
+  <p><span> {{'POSITION' | translate}}: </span> {{profile.position}}</p>
+  <p><span> {{'SUBDIVISION' | translate}}: </span> {{profile.subdivision}} </p>
 </div>
 <div>
-  <button mat-raised-button color="warn"> Delete </button>
-  <button mat-raised-button routerLink="/profileChange" color="primary"> Change </button>
+  <button mat-raised-button color="warn" class="b3"> {{'DELETE' | translate}} </button>
+  <button mat-raised-button routerLink="/profileChange" color="primary" class="b2"> {{'CHANGE' | translate}} </button>
 </div>
 
-<button (click)="switchLanguage('en')">en</button>
-<button (click)="switchLanguage('ru')">ru</button>

@@ -1,3 +1,18 @@
 .container{
-  size: 200%;
+  width: 200%;
 }
+button{
+  margin-top: 15px;
+  margin-left: 5px;
+}
+div{
+  margin-top: 15px;
+  margin-left: 15px;
+
+}
+h2{
+  margin-left: 15px;
+}
+.b1:hover {background-color: #bad1ff}
+.b2:hover {background-color: #8806a5}
+.b3:hover {background-color: darkred}

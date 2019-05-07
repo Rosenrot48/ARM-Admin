@@ -1,15 +1,15 @@
 <app-navbar></app-navbar>
 <div *ngIf="object">
-  <h2>{{object.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{object.id}}</div>
-  <div><span>name: </span> <input [(ngModel)]="object.name" placeholder="name"/></div>
-  <div><span> Date of create: </span> {{object.createTime}}</div>
-  <div><span>Code: </span> {{object.code}}</div>
+  <h2>{{'DETAILS' | translate:{'name': object.name} }}</h2>
+  <div><span>{{'ID' | translate}}: </span>{{object.id}}</div>
+  <div><span>{{'NAME' | translate}}: </span> <input [(ngModel)]="object.name" placeholder="name"/></div>
+  <div><span> {{'DATE_OF_CREATE' | translate}}: </span> {{object.createTime}}</div>
+  <div><span> {{'CODE' | translate}}: </span> {{object.code}}</div>
   <div>
     <!--<button mat-raised-button color="accent" routerLink="/edit/:${id}">Редактировать</button>-->
-    <button mat-raised-button color="accent" (click)="save()">Edit</button>
-    <button mat-raised-button color="warn" (click)="delete(object)"> Delete </button>
-    <button mat-raised-button color="primary" (click)="back()"> Back </button>
+    <button mat-raised-button color="accent" class="b1" (click)="save()">{{'EDIT' | translate}}</button>
+    <button mat-raised-button color="warn" class="b3" (click)="delete(object)"> {{'DELETE' | translate}} </button>
+    <button mat-raised-button color="primary" class="b2" (click)="back()"> {{'BACK' | translate}} </button>
 
   </div>
 </div>
