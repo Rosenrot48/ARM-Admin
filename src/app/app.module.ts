@@ -4,7 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatMenuModule, MatTableModule, MatToolbarModule, MatTreeModule} from '@angular/material';
+import {
+  MatButtonModule, MatFormFieldModule,
+  MatIconModule,
+  MatMenuModule, MatSelectModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatTreeModule
+} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileChangeComponent } from './profile-change/profile-change.component';
@@ -27,6 +34,8 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {BsDropdownModule} from 'ngx-bootstrap';
+import { AddObjectComponent } from './add-object/add-object.component';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/');
@@ -43,7 +52,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DetailsComponent,
     EditComponent,
     SelectedObjectPipe,
-    FilterByPipe
+    FilterByPipe,
+    AddObjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +66,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     MatTreeModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatSelectModule,
     MatInputModule,
     FormsModule,
     HttpClientModule,

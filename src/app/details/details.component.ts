@@ -31,10 +31,10 @@ export class DetailsComponent implements OnInit {
     this.location.back();
   }
 
-  save(save): void {
-    console.log(save);
+  save(saves): void {
+    console.log(saves);
   this.objectService.updateObject(this.object)
-    .subscribe(() => this.back());
+    .subscribe(() => this.toggleReadonly());
   }
 
   delete(object: Stub_object): void {

@@ -4,12 +4,14 @@
   <div><span>{{'ID' | translate}}: </span>{{object.id}}</div>
   <div><span>{{'NAME' | translate}}: </span> <input [(ngModel)]="object.name" placeholder="name" [readOnly]="isReadonly"></div>
   <div><span> {{'DATE_OF_CREATE' | translate}}: </span> {{object.createTime}}</div>
-  <div><span> {{'CODE' | translate}}: </span> {{object.code}}</div>
+  <div><span> {{'CODE' | translate}}: </span> <input [(ngModel)]="object.code" placeholder="code" [readOnly]="isReadonly"></div>
   <div>
+
       <button  mat-raised-button color="accent" class="b1" *ngIf="isCollapsed" (click)="toggleReadonly(pusher)">{{'EDIT'| translate}}</button>
-      <button   mat-raised-button color="accent" class="b1"*ngIf="!isCollapsed" (click)="save(save)">{{'SAVE' | translate}}</button>
-    <button mat-raised-button color="warn" class="b3" (click)="delete(object)"> {{'DELETE' | translate}} </button>
-    <button mat-raised-button color="primary" class="b2" (click)="back()"> {{'BACK' | translate}} </button>
+      <button   mat-raised-button color="accent" class="b1"*ngIf="!isCollapsed" (click)="save(saves)">{{'SAVE' | translate}}</button>
+    <button mat-raised-button color="warn" class="b3" *ngIf="isCollapsed"(click)="delete(object)"> {{'DELETE' | translate}} </button>
+    <button mat-raised-button color="primary" class="b2" *ngIf="isCollapsed" (click)="back()"> {{'BACK' | translate}} </button>
+    <button mat-raised-button color="warn" class="b3" *ngIf="!isCollapsed" (click)="toggleReadonly(pusher)">{{'CANCEL' | translate}}</button>
 
   </div>
 

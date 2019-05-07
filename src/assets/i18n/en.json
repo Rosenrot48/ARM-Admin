@@ -20,5 +20,6 @@
   "ADD": "Add",
   "CHANGE": "Change",
   "DETAILS": "{{name}} Details",
-  "SAVE": "Save changes"
+  "SAVE": "Save changes",
+  "CANCEL": "Cancel"
 }

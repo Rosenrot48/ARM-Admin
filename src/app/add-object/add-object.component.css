@@ -1,0 +1,10 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+.b1:hover {background-color: #bad1ff;}
+.b2:hover {background-color: #8806a5}

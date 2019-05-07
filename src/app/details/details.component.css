@@ -1,6 +1,4 @@
-.container{
-  width: 200%;
-}
+
 button{
   margin-top: 15px;
   margin-left: 5px;
@@ -16,3 +14,27 @@ h2{
 .b1:hover {background-color: #bad1ff}
 .b2:hover {background-color: #8806a5}
 .b3:hover {background-color: darkred}
+
+div{
+  margin-top: 15px;
+  margin-left: 15px;
+
+}
+span {
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 120%;
+  font-weight: lighter;
+}
+h2 {
+  font-weight: bolder;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 70%;
+}

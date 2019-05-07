@@ -8,6 +8,7 @@ import {TreeComponent} from './tree/tree.component';
 import {ListComponent} from './list/list.component';
 import {DetailsComponent} from './details/details.component';
 import {EditComponent} from './edit/edit.component';
+import {AddObjectComponent} from './add-object/add-object.component';
 
 
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'profileChange', component: ProfileChangeComponent},
   { path: 'list', component: ListComponent},
   { path: 'detail/:id', component: DetailsComponent},
-  { path: 'edit/:id', component: EditComponent}
+  { path: 'edit/:id', component: EditComponent},
+  { path: 'add-object', component: AddObjectComponent}
 ];
 
 @NgModule({

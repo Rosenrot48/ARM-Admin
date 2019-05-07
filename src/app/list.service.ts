@@ -78,5 +78,15 @@ export class ListService {
         catchError(this.handleError('addObject', object))
       );
   }
-
+  /* GET heroes whose name contains search term */
+  searchObjects(term: string): Observable<Stub_object[]> {
+    if (!term.trim()) {
+      // if not search term, return empty object array.
+      return of([]);
+    }
+    return this.http.get<Stub_object[]>(`${this.objectUrl}/?name=${term}`).pipe(
+      tap(),
+      catchError(this.handleError<Stub_object[]>('searchObjects', []))
+    );
+  }
 }
