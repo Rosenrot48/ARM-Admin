@@ -16,8 +16,13 @@ export class AddObjectComponent implements OnInit {
   back() {
     this.location.back();
   }
-  add(object: Stub_object): void {
-    this.addService.addObject(object)
+  add(name: string, code: string): void {
+    name = name.trim();
+    code = code.trim();
+    if (!name && !code) {
+      return;
+    }
+    this.addService.addObject({name, code} as Stub_object)
       .subscribe( object => this.objects.push(object)), this.back();
   }
 

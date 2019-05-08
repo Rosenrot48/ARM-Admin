@@ -1,24 +1,24 @@
 <app-navbar></app-navbar>
 <div>
-  <h2>Add new odject</h2>
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Input">
-  </mat-form-field>
+  <h2>{{'NEW_OBJECT' | translate}}</h2>
+  <div class="example-container">
+    <mat-form-field class="example-form">
+      <input matInput placeholder="{{'NAME' | translate}}" #objectName />
+    </mat-form-field>
 
-  <mat-form-field>
-    <textarea matInput placeholder="Textarea"></textarea>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select placeholder="Select">
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-
+    <mat-form-field class="example-form">
+      <input matInput placeholder="{{'CODE' | translate}}" #objectCode />
+    </mat-form-field>
+    <!--
+      <mat-form-field>
+        <mat-select placeholder="Select">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+  </div>
   <div>
-    <button mat-raised-button color="primary" class="b2" (click)="add()"> {{'ADD' | translate}} </button>
+    <button mat-raised-button color="primary" class="b2" (click)="add(objectName.value, objectCode.value)"> {{'ADD' | translate}} </button>
     <button mat-raised-button color="warn" class="b1" (click)="back()"> {{'CANCEL' | translate}} </button>
   </div>
 </div>
+

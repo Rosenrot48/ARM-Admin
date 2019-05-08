@@ -32,9 +32,8 @@ export class DetailsComponent implements OnInit {
   }
 
   save(saves): void {
-    console.log(saves);
   this.objectService.updateObject(this.object)
-    .subscribe(() => this.toggleReadonly());
+    .subscribe(() => this.toggleReadonly('save'));
   }
 
   delete(object: Stub_object): void {
