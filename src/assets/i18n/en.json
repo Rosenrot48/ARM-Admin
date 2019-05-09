@@ -22,5 +22,6 @@
   "DETAILS": "{{name}} Details",
   "SAVE": "Save changes",
   "CANCEL": "Cancel",
-  "NEW_OBJECT": "Add new object"
+  "NEW_OBJECT": "Add new object",
+  "PROFILE": "Profile"
 }
