@@ -14,13 +14,15 @@ export class DetailsComponent implements OnInit {
 
   @Input() object: Stub_object;
   objects: Stub_object[];
-  isCollapsed: boolean = true;
-  isReadonly: boolean = true;
+  isCollapsed = true;
+  isReadonly: boolean;
 
   constructor(private objectService: ListService, private route: ActivatedRoute, private location: Location) {
   }
 
-  ngOnInit() {this.getObject(); }
+  ngOnInit() {
+    this.isReadonly = true;
+    this.getObject(); }
 
   getObject(): void {
     const id = +this.route.snapshot.paramMap.get('id');

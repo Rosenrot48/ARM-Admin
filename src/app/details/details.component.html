@@ -1,10 +1,30 @@
 <app-navbar></app-navbar>
 <div *ngIf="object">
   <h2>{{'DETAILS' |  translate:{'name': object.name} | uppercase }}</h2>
-  <div><span>{{'ID' | translate}}: </span>{{object.id}}</div>
-  <div><span>{{'NAME' | translate}}: </span> <input [(ngModel)]="object.name" placeholder="name" [readOnly]="isReadonly"></div>
-  <div><span> {{'DATE_OF_CREATE' | translate}}: </span> {{object.createTime}}</div>
-  <div><span> {{'CODE' | translate}}: </span> <input [(ngModel)]="object.code" placeholder="code" [readOnly]="isReadonly"></div>
+  <div>
+    <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="{{'ID' | translate}}" value="{{object.id}}" readonly>
+    </mat-form-field>
+  </form></div>
+  <div><form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="{{'NAME' | translate}}" value="{{object.name}}" [readonly]="this.isReadonly">
+    </mat-form-field>
+  </form></div>
+  <div>
+    <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="{{'DATE_OF_CREATE' | translate}}" value="{{object.createTime}}" readonly>
+    </mat-form-field>
+  </form></div>
+  <div>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="{{'CODE' | translate}}" value="{{object.code}}" [readonly]="this.isReadonly">
+      </mat-form-field>
+    </form>
+  </div>
   <div>
 
       <button  mat-raised-button color="accent" class="b1" *ngIf="isCollapsed" (click)="toggleReadonly(pusher)">{{'EDIT'| translate}}</button>

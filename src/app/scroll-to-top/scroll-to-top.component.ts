@@ -1,5 +1,5 @@
 import {Component, HostListener, ElementRef} from '@angular/core';
-
+import  {DOCUMENT} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-scroll-to-top',
