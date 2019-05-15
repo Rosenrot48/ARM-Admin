@@ -19,7 +19,6 @@
       <th mat-header-cell *matHeaderCellDef> {{'CODE' | translate}}</th>
       <td mat-cell *matCellDef="let element"> {{element.code}} </td>
     </ng-container>
-
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

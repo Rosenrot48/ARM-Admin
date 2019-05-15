@@ -4,12 +4,14 @@
   text-align: justify;
   font-size: 1rem;
   padding: 10px;
-}
 
+}
+.fixed{
+  position: fixed;
+}
 img{
   width: 80%;
 }
-/* HeroSearch private styles */
 .search-result li {
   width: 195px;
   height: 16px;

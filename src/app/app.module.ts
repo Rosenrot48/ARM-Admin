@@ -35,6 +35,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import {BsDropdownModule} from 'ngx-bootstrap';
 import { AddObjectComponent } from './add-object/add-object.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -54,6 +55,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SelectedObjectPipe,
     FilterByPipe,
     AddObjectComponent,
+    ScrollToTopComponent,
   ],
   imports: [
     BrowserModule,
