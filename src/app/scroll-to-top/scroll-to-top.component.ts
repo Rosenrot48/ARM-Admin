@@ -20,12 +20,8 @@ export class ScrollToTopComponent {
 
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    if (scrollPosition >= this.topPositionToStartShowing) {
-      this.isShow = true;
-    } else {
-      this.isShow = false;
+    (scrollPosition >= this.topPositionToStartShowing) ? this.isShow = true : this.isShow = false;
     }
-  }
 
   // TODO: Cross browsing
   gotoTop() {

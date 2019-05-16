@@ -90,7 +90,23 @@ export class InMemoryDataService implements InMemoryDbService {
            name: 'GENERAL_BRANCH',
            parentClassCode: '',
            tableName: 'branch'
-         }
+         },
+       { id : 10,
+         createTime: '2018-12-31T21:00:00.000+0000',
+         changeTime: null,
+         code: 'user',
+         name: 'PARENT_USERS',
+         parentClassCode: '',
+         tableName: 'users'
+       },
+       { id : 11,
+         createTime: '2018-12-31T21:00:00.000+0000',
+         changeTime: null,
+         code: 'user',
+         name: 'GRAND_USERS',
+         parentClassCode: '',
+         tableName: 'users'
+       },
        ];
      return  { objectsList};
   }
