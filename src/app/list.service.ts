@@ -5,8 +5,9 @@ import {Observable, of, pipe} from 'rxjs';
 import {catchError, map, tap } from 'rxjs/operators';
 import {MessageService} from './message.service';
 
+
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({'Accept-Language' : 'application/json' })
 };
 @Injectable({
   providedIn: 'root'
@@ -64,6 +65,7 @@ export class ListService {
       catchError(this.handleError<any>('updateObject')));
 
   }
+
   /** DELETE: delete the hero from the server */
   deleteObject(id: number): Observable<{}> {
     const url = `${this.objectUrl}/${id}`;
@@ -71,13 +73,15 @@ export class ListService {
       .pipe(catchError(this.handleError(`deleteObject`))
       );
   }
+
   /** POST: add a new hero to the database */
-  addObject (object: Stub_object): Observable<any> {
+  addObject(object: Stub_object): Observable<any> {
     return this.http.post<Stub_object>(this.objectUrl, object, httpOptions)
       .pipe(
         catchError(this.handleError('addObject', object))
       );
   }
+
   /* GET heroes whose name contains search term */
   searchObjects(term: string): Observable<Stub_object[]> {
     if (!term.trim()) {
@@ -88,5 +92,9 @@ export class ListService {
       tap(),
       catchError(this.handleError<Stub_object[]>('searchObjects', []))
     );
+  }
+  // add http  accept languages
+  acceptLanguage(){
+    return this.http.head( { headers: new HttpHeaders({'Accept Language' : 'cookies'})})
   }
 }
