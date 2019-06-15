@@ -6,9 +6,9 @@ import {catchError, map, tap } from 'rxjs/operators';
 import {MessageService} from './message.service';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({'Accept-Language' : 'application/json' })
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({'Accept-Language' : 'application/json' })
+// };
 @Injectable({
   providedIn: 'root'
 })
@@ -60,7 +60,7 @@ export class ListService {
   }
 
   updateObject(object: Stub_object): Observable<any> {
-    return this.http.put(this.objectUrl, object, httpOptions).pipe(
+    return this.http.put(this.objectUrl, object).pipe(
       tap(_ => this.log(`updated object id=${object.id}`)),
       catchError(this.handleError<any>('updateObject')));
 
@@ -69,14 +69,14 @@ export class ListService {
   /** DELETE: delete the hero from the server */
   deleteObject(id: number): Observable<{}> {
     const url = `${this.objectUrl}/${id}`;
-    return this.http.delete(url, httpOptions)
+    return this.http.delete(url)
       .pipe(catchError(this.handleError(`deleteObject`))
       );
   }
 
   /** POST: add a new hero to the database */
   addObject(object: Stub_object): Observable<any> {
-    return this.http.post<Stub_object>(this.objectUrl, object, httpOptions)
+    return this.http.post<Stub_object>(this.objectUrl, object)
       .pipe(
         catchError(this.handleError('addObject', object))
       );
@@ -93,8 +93,8 @@ export class ListService {
       catchError(this.handleError<Stub_object[]>('searchObjects', []))
     );
   }
-  // add http  accept languages
-  acceptLanguage(){
-    return this.http.head( { headers: new HttpHeaders({'Accept Language' : 'cookies'})})
-  }
+  // // add http  accept languages
+  // acceptLanguage(){
+  //   return this.http.head( { headers: new HttpHeaders({'Accept Language' : 'cookies'})})
+  // }
 }
